@@ -1,0 +1,8 @@
+CREATE TABLE club_type_master(
+id serial primary key,
+type varchar(20) NOT NULL,
+description varchar(50) NOT NULL,
+created_by varchar(30) default 'system',
+created_time TIMESTAMP default current_timestamp,
+updated_by varchar(30) default 'system',
+updated_time TIMESTAMP default current_timestamp);
