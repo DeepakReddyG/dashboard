@@ -6,3 +6,26 @@ created_by varchar(30) default 'system',
 created_time TIMESTAMP default current_timestamp,
 updated_by varchar(30) default 'system',
 updated_time TIMESTAMP default current_timestamp);
+
+
+--inserting data 
+
+INSERT INTO club_type_master(type,description) 
+VALUES('non-technical','non-technical clubs');
+
+INSERT INTO club_type_master(type,description) 
+VALUES('technical','technical clubs');
+
+--creating table for clubs
+CREATE TABLE clubs(
+id serial primary key,
+name varchar(30) NOT NULL,
+description varchar(50) NOT NULL,
+club_type int NOT NULL references club_type_master (id),
+president int NOT NULL,
+vice_president int NOT NULL,
+master_trainer int NOT NULL,
+finicial_lead int NOT NULL,
+events_lead int NOT NULL); 
+
+
